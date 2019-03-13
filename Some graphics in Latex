@@ -1,0 +1,59 @@
+% For making process plain and easy
+% I recommend using GeoGebra's graphic calculator
+% there you can import the needed graphs in "tikz"
+% format, gaining the aimed code.
+
+\documentclass{report}
+
+\title{1819-108-C2-W2-01}
+\author{Marks Sunins}
+\date{February 2019}
+\usepackage{tikz}
+\usepackage{pgf,tikz,pgfplots}
+\pgfplotsset{compat=1.15}
+\usetikzlibrary{arrows}
+
+\title{1819-108-C2-W2-01}
+\author{Marks Sunins}
+\date{February 2019}
+
+\begin{document}
+\maketitle
+
+\begin{tikzpicture}
+\draw [step=1cm,gray,very thin](-1.5,-1.5) grid (5.5,5.5);
+\draw[thick,->](-1,0) -- (4,0) node[anchor=north west]{x axis};
+\draw[thick,->](0,-1) --(0,4) node[anchor=south east]{y axis};
+
+
+\foreach \x in {4}
+    \draw(\x cm,1pt)--(\x cm,-1pt) node[anchor=north]{$$\x$$};
+\foreach \y in {0,4}
+    \draw(1pt, \y cm)--(-1pt,\y cm) node[anchor=east]{$$\y$$};
+\draw[thick,dashed,color=red] (4,0) -- (4,4);
+\draw[thick,dashed,color=red] (0,4) -- (4,4);
+\draw[thick,->,color=blue] (0,0) -- (4,4);
+\draw (2.5,3) node {$y=x$};
+\fill[orange!40!white!] (0,0) -- (4,0) -- (4,4) -- cycle;
+\end{tikzpicture}
+
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\begin{axis}[
+x=1cm,y=1cm,
+axis lines=middle,
+ymajorgrids=true,
+xmajorgrids=true,
+xmin=-6,
+xmax=6,
+ymin=-5,
+ymax=5,
+xtick={-6,-5,...,6},
+ytick={-5,-4,...,5},]
+\clip(-6.28,-5.01) rectangle (6.28,5.01);
+\draw[line width=1pt,color=violet,smooth,samples=100,domain=-6.295:6.295] plot(\x,{((\x)-1)/((\x)-2)});
+\begin{scriptsize}
+\draw[color=red] (-5,1.5) node {$f$};
+\end{scriptsize}
+\end{axis}
+\end{tikzpicture}
+\end{document}
