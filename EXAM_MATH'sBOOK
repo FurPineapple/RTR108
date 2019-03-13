@@ -1,0 +1,150 @@
+\documentclass[9pt]{book}
+\usepackage[english]{babel}%%%
+\usepackage[utf8]{inputenc}%%%
+\usepackage{fancyhdr}
+\usepackage[right=20mm]{geometry}%
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage[T1]{fontenc}
+\usepackage{etoolbox}
+\usepackage{ragged2e}
+
+\geometry{
+    a4paper,
+    total={172.7mm,248.9mm},
+    top=23mm}
+\setcounter{tocdepth}{1}
+\pagestyle{fancy}
+\fancyhf{}
+\chead{SPECIAL FUNCTIONS}
+\cfoot{642}
+ 
+\begin{document}
+% \pagestyle{myheadings} 
+% \setcounter{page}{3} 
+\begin{itemize}
+    \item [] and hence that the $H_n(x)$ satisfy the Hermite equation
+\end{itemize}
+
+$$y^n-2xy'+2ny=0,$$
+
+\begin{itemize}
+    \item [] where $n$ is an integer $\ngeqslant 0.$
+    \begin{itemize}
+        \item [] Use $\Phi$ to prove that
+    \end{itemize}
+\end{itemize} 
+\begin{itemize}
+    \item [] 
+    \begin{enumerate}[label=(\alph*)]
+        \item $H'_n(x)=2nH_{n-1}(x),$
+        \item $H_{n+1}(x)-2xH_n(x)+2nH_{n-1}(x)=0.$
+    \end{enumerate}
+\end{itemize}
+
+
+\makeatletter
+\AtEndEnvironment{enumerate}{%
+  \global\@enumdepth 0
+}
+
+\newcommand{\incenumdepth}[1][1]{%
+  \advance \@enumdepth \@ne%
+  \setcounter{enum\@roman{\@enumdepth}}{#1}%
+}
+\makeatother
+
+    \incenumdepth[18]
+\begin{enumerate}[start=6 ,leftmargin=0cm, label*={\arabic*}]
+
+\item \begin{itemize}
+[leftmargin= 1cm]
+
+\item[] 
+ A charge $+2q$ is situated at the origin and charged of $-q$ are situated at distances 
+
+\item[] 
+$\pm a$ from it among the polar axis. By relating it to the generating function for the 
+
+\item[] 
+Legendre polynomials, show that the electrostatic potential $\Phi$ at a point $(r,\theta,\phi)$ 
+
+\item[] with $r>a$ is given by
+
+
+ $$\Phi(r,\theta,\phi)=\left.\frac{2q}{4\pi\epsilon_0r}\right.\sum_{s=1}^\infty(\frac{a}{r})^2 P_{2s}(cos\theta).$$
+\end{itemize}
+
+\item \begin{itemize}
+[leftmargin= 1cm]
+\item[] For the associated Laguerre polynomials,  carry through the following exercises.
+\end{itemize}
+\end{enumerate}
+
+\begin{itemize}
+    \item [] 
+    \begin{enumerate}[label=(\alph*)]
+        \item Prove the Rodrigues' formula
+        
+         $$L_n^m(x)=\frac{e^xx^{-m}}{n!}\frac{d^n}{dx^n}(x^{n+m}e^{-x}),$$
+    \item[] taking the polynomials to be defined by
+ $$L_n^m(x)=\sum_{k=0}^n(-1)^k\frac{(n+m)!}{k!(n-k)!(k+m)!}x^k.$$
+    \end{enumerate}
+\end{itemize}
+
+
+\begin{itemize}
+    \item [] 
+    \begin{enumerate}[start=2,label=(\alph*)]
+\item Prove the recurrence relations
+$$(n+1)L_{n+1}^m(x)=(2n+m+1-x)L_n^m(x)-(n+m)L_{n-1}^m(x),$$
+$$x(L_n^m)'(x)=nL_n^m(x)-(n+m)L_{n-1}^m(x),$$
+
+\item[]but this time taking the polynomial as defined by
+$$L_n^m(x)=(-1)^m\frac{d^m}{dx^m}L_{n+m}(x)$$
+
+\item[]or the generating fun
+\end{enumerate}
+\end{itemize}
+
+    \incenumdepth[18]
+\begin{enumerate}[start=8 ,leftmargin=0cm, label*={\arabic*}]
+
+\item \begin{itemize}
+[leftmargin= 1cm]
+
+\item[] 
+The quantum mechanical wavefunction for a one-dimensional simple harmonic
+
+oscillator in its $n$th energy level is of the form
+
+ $$\psi(x)=exp(-x^2/2)H_n(x),$$
+ 
+\item[] where $H_n(x)$ is $n$th Hermite polynomial. The generating function
+for the
+
+polynomials is
+
+$$G(x,h)=e^{2hx-h^2}=\sum_{n=0}^\infty\frac{H_n(x)}{n!}h^n.$$
+
+\end{itemize}
+\end{enumerate}
+
+\begin{itemize}
+    \item [] 
+    \begin{enumerate}[label=(\alph*)]
+        \item
+       Find  $H_i(x)$ for $i=1,2,3,4.$
+       
+       \item Evaluate by direct calculation
+$$\int_{-\infty}^{\infty}e^{-x^2}H_p(x)H_q(x)dx,$$
+        \begin{enumerate}
+            \item [(i)]for $p=2$, $q=3$; (ii) for $p=2, q=4$; (iii) for $p=q=3$. Check your
+            
+            answers against the expected values $2^pp!\sqrt{\pi}\delta_{pq}.$
+        \end{enumerate}
+    \end{enumerate}
+\end{itemize}
+
+\end{document}
+\end{document}
