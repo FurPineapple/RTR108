@@ -6,6 +6,9 @@
 \usepackage{multicol}
 \usepackage{enumitem}
 \usepackage{etaremune}
+\usepackage{color}
+\definecolor{green}{rgb}{0,0.451}
+\pagecolor{green}
 \geometry{legalpaper, landscape}
 \newcommand*\circled[1]{\tikz[baseline=(char.base)]{
 \node[shape=circle,color=red,draw,inner sep=6pt] (char) {#1};}}
@@ -16,11 +19,10 @@
 
 \newcommand*\jobtime[1]{\tikz[baseline=(char.base)]{
 \node[shape=rectangle,draw,inner sep=5pt] (char) {#1};}}
-
 \begin{document}
+\color{white}
 \section*{Week 2}
 \begin{multicols}{3}
-
 \begin{description}[align=left]
 \item [To Do:] \begin{itemize}
     \item R course on Desktop
@@ -45,12 +47,12 @@
 \renewcommand{\labelenumi}{\theenumi)}
 \begin{etaremune}
 
-\item $$\left\frac{6}{5} \right={L_{sys}^-}   \left[\frac{\jobtime{}}{time} \right
-=\left\frac{job.time{}}{time} \right=job\bigg]$$
+\item $$\left.\frac{6}{5} \right.={L_{sys}^-}   \left[\frac{\jobtime{}}{time} \right.
+=\left.\frac{job.time{}}{time} \right.=job\bigg]$$
 
-\item $$\left\frac{3}{5} \right={L_{\varrho}^-}   \left[\frac{\jobtime{}}{time} \right=job\bigg]$$
+\item $$\left.\frac{3}{5} \right.={L_{\varrho}^-}   \left[\frac{\jobtime{}}{time} \right.=job\bigg]$$
 
-\item $$\left\frac{3}{5} \right={L_{srv}^-}  \left[\frac{\jobtime{}}{time} \right=job\bigg]$$
+\item $$\left.\frac{3}{5} \right.={L_{srv}^-}  \left[\frac{\jobtime{}}{time} \right.=job\bigg]$$
 \end{etaremune}
 
 \begin{tikzpicture}
@@ -80,7 +82,7 @@
 \draw(-4.5,2.5) node {SYSTEM};
 \usetikzlibrary{patterns}
 \fill[pattern=north west lines, pattern color=blue] (3,3) rectangle (4,4);
-\fill[pattern=north east lines, pattern color=green] (3,2) rectangle (4,3);
+\fill[pattern=north east lines, pattern color=violet] (3,2) rectangle (4,3);
 \fill[pattern=north east lines, pattern color=red] (2,1) rectangle (4,2);
 \fill[pattern=north east lines, pattern color=red] (5,1) rectangle (6,2);
 \fill[pattern=north west lines, pattern color=blue] (5,2) rectangle (6,3);
@@ -88,7 +90,7 @@
 
 \begin{tikzpicture}
 
-\overbrace{\left\frac{\squared{}\circled{}}{{L_{\varrho}^-+L_{srv}^-} \right}}^{L_{sys}^-}
+\overbrace{\frac{\squared{}\circled{}}{{L_{\varrho}^-+L_{srv}^-} }}^{L_{sys}^-}
 
 \end{tikzpicture}
 
