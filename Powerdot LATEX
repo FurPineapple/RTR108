@@ -1,0 +1,172 @@
+\documentclass[style=fyma, 
+ mode=present,paper=smartboard,
+orient=landscape
+]
+{powerdot}
+\pdsetup{
+logohook=t,
+logopos={0.89\slidewidth,.99\slideheight},
+logocmd={\includegraphics[height=.08\slideheight]{lio.ps}}}
+\usepackage[utf8]{inputenc}
+\usepackage{multicol}
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage{circuitikz}
+
+\lstnewenvironment{code}{%
+\lstset{frame=single,escapeinside=`',
+  backgroundcolor=\color{yellow!20},
+  basicstyle=\footnotesize \ttfamily}
+}{}
+\newcommand*\jobtime[1]{\tikz[baseline=(char.base)]{
+\node[shape=rectangle,draw,inner sep=5pt] (char) {#1};}}
+\title{Making Greenboard using PowerDot}
+\author{Marks Sunins}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+    \section{Green Board}
+
+\begin{slide}{Table of Contents}
+\begin{multicols}{2}
+\begin{enumerate}
+    \item Sākums
+        \begin{itemize}[type=1]
+            \item <1> Kā notika sagatavošana
+            \item <2> Termiņš
+            \item <3> Resursi
+        \end{itemize}
+    \item Process
+    \begin{itemize}[type=1]
+            \item <1> Kolonnu izmantošana
+            \item <2> Formulas
+            \item <3> Grafiska attēlošana
+        \end{itemize}
+
+    \item Attēli
+    \item Gala rezultāts
+    \item Beamer izmantošana
+        \begin{itemize}[type=1]
+            \item <1> Slaidu dalīšana
+            \item <2> Noformējums
+            \item <3> Pauzes
+        \end{itemize}
+\end{enumerate}
+\end{multicols}
+\end{slide}
+
+\begin{slide}{Beginning}
+     \begin{multicols}{2}
+\begin{description}
+\item [Prepare:] \begin{itemize}
+    \item SAKAI vidē ievietots noteikts uzdēvums ar tāfeli \pause
+    \item Attēls, kura saturs jāparveido LaTeX'ā \pause
+\end{itemize}
+
+\item [Termiņš:] \begin{itemize}
+    \item 2019-02-28:10:00 \pause
+\end{itemize}
+\includegraphics[height=0.3\textheight]{new.ps}
+\columnbreak
+\item [Resursi:] \begin{itemize}
+\item SAKAI; Overleaf \pause
+\end{itemize}
+\end{description}
+    \end {multicols}
+\end{slide}
+
+\begin{slide}{Process}
+\begin{enumerate}
+        \item Kolonnas\begin{itemize}
+\item Izmantojot $[multicols]$ ar argumentu $[3]$ sadaliju tafeli uz 3 vienlīdzīgas daļas.
+\end{itemize}
+        \item Formulas\begin{itemize}
+\item ar [new command] palidzību nodefinēju kvadrādu formulai, $$\left.\frac{6}{5} \right.={L_{sys}^-}   \left[\frac{\jobtime{}}{time} \right.
+=\left.\frac{job.time{}}{time} \right.=job\bigg],$$ izmantoju dollora zimes, lai noformetu matematisko fukciju.
+\end{itemize}
+        \item Grafiķi\begin{itemize}
+\item \begin{tikzpicture}
+\draw[thick,->](1,1) -- (2.5,1) node[anchor=north west]{t};
+\draw[thick,->](1,1) --(1,2.5) node[anchor=south east]{L};
+\end{tikzpicture}
+
+ar [tikzpicture] komandu uzzīmēju grafiku
+\end{itemize}
+    \end{enumerate}
+\end{slide}
+
+\begin{slide}{End result}
+    \begin{multicols}{2}
+         \includegraphics[height=0.3\textheight]{code.ps}
+    \columnbreak
+         \includegraphics[height=0.3\textheight]{pic.ps}
+    \end{multicols}
+    \begin{tikzpicture}
+\draw (-8,-4)--(12,-4);
+    \end{tikzpicture}
+     \begin{multicols}{2}
+         \includegraphics[height=0.3\textheight]{pic.ps}
+    \columnbreak
+         \includegraphics[height=0.3\textheight]{code.ps}
+    \end{multicols}
+\end{slide}
+
+\section{Additional Exercise}
+\begin{slide}{Circuits}
+    \begin{center}
+\begin{circuitikz}[scale=1.2]
+\draw (0,0) node[ground] {}
+    to[V=$e(t)$, *-*] (0,2) to[C=4nF] (2,2)
+    to[R, l_=0.25k$\Omega$, *-*] (2,0) 
+(2,2) to[R=1k$\Omega$] (4,2)
+    to[C, l_=2nF, *-*] (4,0)
+(5,0) to[I, i_=$a(t)$, -*] (5,2) -- (4,2)
+(0,0) -- (5,0)
+(0,2) -- (0,3) to[L, l=2mH] (5,3) -- (5,2)
+
+{[anchor=south east] (0,2) node {1} (2,2) node {2} (4,2) node {3}};
+\end{circuitikz}
+    \end{center}
+\begin{tikzpicture}
+\draw (-8,-4)--(12,-4);
+\end{tikzpicture}
+\begin{center}
+        \begin{circuitikz}
+    \draw (0,0){to[V=1V, color=red] (0,2) }
+    to[R=1$\Omega$] (2,2)
+    to[C=1F] (2,0) -- (0,0);
+        \end{circuitikz}
+\end{center}
+
+\end{slide}
+\begin{slide}[method=direct]{Formulas and Code}
+ Steps 1 and 2:
+\begin{enumerate}
+        \item  \begin{code}
+$$\frac{6}{5}={L_{sys}^-}   [\frac{\jobtime{}}{time}
+=\frac{job.time{}}{time}=job\bigg],$$
+        \end{code}
+$$\frac{6}{5}={L_{sys}^-}   [\frac{\jobtime{}}{time}
+=\frac{job.time{}}{time}=job\bigg],$$
+        \item \begin{code}
+$$\Phi(r,\theta,\phi)=\frac{2q}{4\pi\epsilon
+_0r}\sum_{s=1}^\infty(\frac{a}{r})^2 P_{2s}
+(cos\theta).$$
+        \end{code}
+$$\Phi(r,\theta,\phi)=\frac{2q}
+{4\pi\epsilon_0r}\sum_{s=1}^
+\infty(\frac{a}{r})^2 P_{2s}(cos\theta).$$
+        \item \begin{code}
+$$L_n^m(x)=\frac{e^xx^{-m}}{n!}\frac{d^n}
+{dx^n}(x^{n+m}e^{-x}),$$
+        \end{code}
+$$L_n^m(x)=\frac{e^xx^{-m}}{n!}\frac{d^n}
+{dx^n}(x^{n+m}e^{-x}),$$
+\end{enumerate}
+
+\end{slide}
+
+\end{document}
