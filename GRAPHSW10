@@ -1,0 +1,73 @@
+\documentclass[margin=8pt]{report}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usetikzlibrary{decorations.markings}
+\definecolor{ao(english)}{rgb}{0.0, 0.5, 0.0}
+\definecolor{amaranth}{rgb}{0.9, 0.17, 0.31}
+\begin{document}
+\title{1819-108-W10-C2-HW}
+\author{Marks Sunins}
+\date{April 11, 2019}
+\maketitle
+
+\begin{tikzpicture}
+    \begin{axis}%
+    [
+        %grid=major,     
+        xmin=-2.2, xmax=2.2,
+        ymin=-2.2, ymax=2.2,
+        ytick={-2,-1,0,...,1,2},       
+        xtick={-2,-1,0,...,1,2},
+        yticklabel style={rotate=90},
+        xticklabels={-2,-1,0,...,1,2},
+        yticklabels={-2,-1,0,...,1,2},
+    ylabel=$y$,
+    xlabel=$x$,
+    legend style={at={(axis cs:-2,0.8)},nodes={inner sep=0.5pt},anchor=south west}]
+    
+    % 
+    % 
+        \addplot+[mark=none,black,domain=-2:0]{x};
+        \addlegendentry{Id}
+    % 
+    % 
+        \addplot%
+        [
+            blue,%
+            mark=none,
+            samples=100,
+            domain=-2:2,
+        ]
+        (x,{1/(1+exp(-x))});
+         \tiny{\addlegendentry{\tiny{Sigmoid}}}
+    % 
+    % 
+        \addplot [
+            red,%
+            mark=none,
+            samples=100,
+            domain=-2:2,
+        ] {tanh(\x)};
+         {\addlegendentry{tanh}}
+  
+    
+    % 
+    % 
+        % \addplot+[mark=none,black]{};
+        \addplot+[solid,ao(english),mark=none](0,0) -- (1,0) -- (1,1)--(2,1);
+        \addlegendentry{Threshold}
+    % 
+    % 
+        \addplot+[mark=none,amaranth,domain=-2:0] {0};
+        \addplot+[solid,mark=none,amaranth,domain=0:2] {x};
+        \addlegendentry{ReLu}
+    
+    \end{axis}
+    
+\end{tikzpicture}
+\begin{center}
+Figure 2: Activation functions
+\end{center}
+$$\frac{1}{1+E^{-x}} - sigmoid$$
+$$y=tanh(x) - tanh$$
+\end{document}
