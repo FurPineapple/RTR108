@@ -1,0 +1,253 @@
+\documentclass{report}
+
+\usepackage{tikz, amssymb,color,enumitem,etoolbox}
+\usepackage[document]{ragged2e}
+\usepackage[paperwidth=212mm, paperheight=305mm]{geometry}
+\usepackage{multirow, makecell, bigstrut, booktabs, float}
+
+\usepackage{fetamont}
+
+\usepackage{pgfplots}
+
+\usepackage{fancyhdr}
+
+\addtolength{\oddsidemargin}{-1cm}
+	\addtolength{\evensidemargin}{-2.3cm}
+	\addtolength{\textwidth}{1.2in}
+    	\addtolength{\topmargin}{-.33cm}
+\pagenumbering{arabic}
+
+\pagestyle{fancyplain}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt} % remove lines as well
+  \renewcommand{\footrulewidth}{0pt}
+  
+\rfoot{ \fancyplain{}{229} }
+ \makeatletter
+\AtEndEnvironment{enumerate}{%
+  \global\@enumdepth 0
+}
+
+\newcommand{\incenumdepth}[1][1]{%
+  \advance \@enumdepth \@ne%
+  \setcounter{enum\@roman{\@enumdepth}}{#1}%
+}
+\begin{document}
+
+\begin{table}
+
+\def\arraystretch{-2} % vertical stretch factor
+\centering
+\begin{tabular}{p{3.6cm} p{13cm}}
+\begin{flushright}
+\ffmfamily\bfseries\textcolor{blue}{F I G U R E ~ 2} 
+   
+  \sffamily
+  {Range of Values on
+   
+  Finishing Hours for Which Current Basis 
+   
+  Remains Optimal in 
+   
+  Giapetto Problem}
+   
+  \end{flushright}
+ 
+
+  &
+
+\begin{tikzpicture}[baseline=(current bounding box.center)]
+\begin{axis}[
+       width=0.8\textwidth,
+       height=0.6\textwidth,
+       axis lines=center,
+       axis on top=true,
+       xmin=1934,
+       xmax=2012,
+       ymin=0,
+       ymax=600,
+     ]
+       \addplot[color=red,mark=x] coordinates {
+         (1988,232)
+         (1989,531)
+         (1990,381)
+         (1991,268)
+         (1992,179)
+         (1993,50)
+         (1994,15)
+         (1995,8)
+         (1996,6)
+         (1997,1)
+         (1998,3)
+         (1999,8)
+         (2000,7)
+         (2001,4)
+         (2002,11)
+         (2003,3)
+         (2004,4)
+         (2005,0)
+         (2006,0)
+         (2007,3)
+         (2008,25)
+         (2009,140)
+         (2010,157)
+         (2011,92)
+         (2012,49)
+       };
+     \end{axis}
+    %  \begin{axis}[
+    %   width=0.8\textwidth,
+    %   height=0.6\textwidth,
+    %   axis lines=center,
+    %   axis on top=true,
+    %   xmin=0,
+    %   xmax=60,
+    %   xticklabel style={/pgf/number format/1000 sep=},
+    %   ymin=0,
+    %   ymax=120,
+    % %  
+    %   \addplot[color=red,mark=x] coordinates {
+    %     (0,120)
+    %     (60,0)
+    %   };
+    %   \end{axis}
+       
+    %     \begin{axis}[
+    %   width=0.8\textwidth,
+    %   height=0.6\textwidth,
+    %   axis lines=center,
+    %   axis on top=true,
+    %   xmin=40,
+    %   xmax=40,
+    %   xticklabel style={/pgf/number format/1000 sep=},
+    %   ymin=0,
+    %   ymax=105,
+    %   \addplot[color=violet,mark=x] coordinates{
+    %   (40,105)
+    %   (40,0)
+    %   };
+    %   \end{axis}
+       
+    %     \begin{axis}[
+    %   width=0.8\textwidth,
+    %   height=0.6\textwidth,
+    %   axis lines=center,
+    %   axis on top=true,
+    %   xmin=0,
+    %   xmax=55,
+    %   xticklabel style={/pgf/number format/1000 sep=},
+    %   ymin=0,
+    %   ymax=100,
+    %   \addplot[color=pink,mark=x] coordinates{
+    %   (0,100)
+    %   (55,0)
+    %   };
+    %   \end{axis}
+      
+    %   \begin{axis}[
+    %   width=0.8\textwidth,
+    %   height=0.6\textwidth,
+    %   axis lines=center,
+    %   axis on top=true,
+    %   xmin=0,
+    %   xmax=80,
+    %   xticklabel style={/pgf/number format/1000 sep=},
+    %   ymin=0,
+    %   ymax=80,
+    %   \addplot[color=blue,mark=x] coordinates{
+    %   (0,80)
+    %   (80,0)
+    %   };
+    %   \end{axis}
+      
+    %   \begin{axis}[
+    %   width=0.8\textwidth,
+    %   height=0.6\textwidth,
+    %   axis lines=center,
+    %   axis on top=true,
+    %   xmin=0,
+    %   xmax=40,
+    %   xticklabel style={/pgf/number format/1000 sep=},
+    %   ymin=0,
+    %   ymax=80,
+    %   \addplot[color=green,mark=x,dashed] coordinates{
+    %   (0,80)
+    %   (40,0)
+    %   };
+    %   \end{axis}
+      
+    %   \begin{axis}[
+    %   width=0.8\textwidth,
+    %   height=0.6\textwidth,
+    %   axis lines=center,
+    %   axis on top=true,
+    %   xmin=0,
+    %   xmax=40,
+    %   xticklabel style={/pgf/number format/1000 sep=},
+    %   ymin=0,
+    %   ymax=60,
+    %   \addplot[color=green,mark=x,dashed] coordinates{
+    %   (0,60)
+    %   (40,0)
+    %  };
+       
+    %  \end{axis}
+
+\end{tikzpicture}
+  \\
+ 
+  &
+\justifying 
+    is where the carpentry and finishing constraints are binding. If we change the value of $b_1$, then \textit{as long as the point where the finishing and carpentry constraints are binding remains feasible, the optimal solution will still occur where the finishing and carpentry constraints intersect}. From Figure 2, we see that if $b_1 \textgreater120$, then the point where the finishing and carpentry constraints are both binding will lie on the portion of the carpentry constraint below point $D$. Note that at point $D,2(40)+40 = 120$ finishing hours are used. in this region, $x_1\textgreater40$, and the demand constraint for soldiers is not satisfied. Thus, for $b_1$\textgreater120, the current basis will no longer be optimal. Similarly, if $b_1$\textless80, then the carpentry and finishing constraints will be binding at an in-feasible point having $x_1\textless 0$, and the current basis will no longer be optimal. Note that at point $A , 0+80=80$ finishing hours are used. Thus (if all other parameters remain unchanged), the current basis remains optimal if  $80 \le b_1\le 120$.
+    
+    Note that although for  $80 \le b_1 \le 120$, the current basis remains optimal, \textit{the values of the decision variables and the objective function value change}. For example, if $80 \le b_1 \le 100$, then the optimal solution will change from point B to some other point on the line segment AB. Similarly, if 100 b1 120, then the optimal solution will change from point B to some other point on the line BD.
+    
+    As long as the current basis remains optimal, it is a routine matter to determine how a change in the right-hand side of a constraint changes the values of the decision variables. To illustrate the idea, let $b_1 =$ number of available finishing hours. If we change $b_1$ to $100 + \Delta$ , then we know that the current basis remains optimal for $-20\le \Delta \le 20$. Note that as $b_1$ changes (as long as $-20\le \Delta \le 20$), the optimal solution to the LP is still the point where the finishing-hour and carpentry-hour constraints are binding. Thus, if $b_1 = 100 + \Delta$ , we can find the new values of the decision variables by solving
+
+\smallskip
+\makeatother
+
+
+\begin{itemize}
+[leftmargin= 0.2cm]
+
+\item[] 
+\begin{center}
+    
+
+~~~~~~~~~~~~~~~~$2x_1 + x_2 = 100 + \Delta $ ~~~~~~~and~~~~~~~ $x_1 +x_2 = 80$
+\end{center}
+
+
+\end{itemize}
+
+\centering
+    
+\vspace{12pt}
+
+
+\makeatother
+
+
+\incenumdepth[5]
+\begin{enumerate}[start=1 ,leftmargin=2.5cm, label*={\arabic*}]
+
+\item \begin{itemize}
+[leftmargin= 0.2cm]
+
+\item[] 
+\begin{center}
+    
+
+\sffamily{A Graphical Introduction to Sensitivity Analysis}
+\end{center}
+
+
+\end{itemize}
+\end{enumerate}
+
+  \end{tabular}
+\end{table}
+ 
+
+        \end{document}
